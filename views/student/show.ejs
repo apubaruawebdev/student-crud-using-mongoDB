@@ -1,0 +1,29 @@
+
+    <section class="my-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="card shadow-lg">
+                        <div class="card-header d-flex align-items-center justify-content-between">
+                            <h2>Student Information</h2>
+                            <a href="/student" class="btn btn-primary">Back</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="student-details text-center">
+                                <% if (singleStudent.photo == "avatar.jpg") { %>
+                                    <img class="shadow-lg" src="/images/avatar.jpg" alt="">
+                                <% } else { %>
+                                    <img class="shadow-lg" src="/images/student/<%= singleStudent.photo %> " alt="">
+                                <% } %>
+                                <h3>Name : <%= singleStudent.name %> </h3>
+                                <p class="mb-1"><b>Email :</b> <%= singleStudent.email %></p>
+                                <p class="mb-1"><b>Phone :</b> <%= singleStudent.phone %></p>
+                                <p class="mb-1"><b>Location :</b> <%= singleStudent.location %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   

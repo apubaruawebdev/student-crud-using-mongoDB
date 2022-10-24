@@ -1,0 +1,60 @@
+<section class="my-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="card shadow-lg">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <h2>Create Student</h2>
+                        <a href="/student" class="btn btn-primary">Back</a>
+                    </div>
+                    <div class="card-body">
+                        <form action="/student/create" method="POST" enctype="multipart/form-data">
+                            <div class="my-3">
+                                <label for="">Name</label>
+                                <input type="text" class="form-control" name="name">
+                            </div>
+                            <div class="my-3">
+                                <label for="">Email</label>
+                                <input type="text" class="form-control" name="email">
+                            </div>
+                            <div class="my-3">
+                                <label for="">Phone</label>
+                                <input type="text" class="form-control" name="phone">
+                            </div>
+                            <div class="my-3">
+                                <label for="" class="d-block mb-1">Gender</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" value="Male" type="radio" name="gender" id="male">
+                                    <label class="form-check-label" for="male">Male</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" value="Female" type="radio" name="gender"
+                                        id="female">
+                                    <label class="form-check-label" for="female">Female</label>
+                                </div>
+                            </div>
+                            <div class="my-3">
+                                <label for="">Location</label>
+                                <select name="location" id="" class="form-control">
+                                    <option value="">--Select--</option>
+                                    <option value="Mohakhali">Mohakhali</option>
+                                    <option value="Mirpur">Mirpur</option>
+                                    <option value="Badda">Badda</option>
+                                    <option value="Gulshan">Gulshan</option>
+                                    <option value="Banani">Banani</option>
+                                </select>
+                            </div>
+                            <div class="my-3">
+                                <label for="">Photo</label>
+                                <input type="file" class="form-control" name="student_photo">
+                            </div>
+                            <div class="my-3">
+                                <input type="submit" class="btn btn-primary w-100" value="Add Student">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

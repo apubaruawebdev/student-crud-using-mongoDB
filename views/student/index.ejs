@@ -1,0 +1,72 @@
+<section class="my-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card shadow-lg">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <h2>All Student Table</h2>
+                        <a href="/student/create" class="btn btn-primary">+ Create Student</a>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped student-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Gender</th>
+                                    <th>Location</th>
+                                    <th>Photo</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% students.reverse().forEach((student, index)=> { %>
+                                    <tr style="vertical-align: middle">
+                                        <td>
+                                            <%= index + 1 %>
+                                        </td>
+                                        <td>
+                                            <%= student.name %>
+                                        </td>
+                                        <td>
+                                            <%= student.email %>
+                                        </td>
+                                        <td>
+                                            <%= student.phone %>
+                                        </td>
+                                        <td>
+                                            <%= student.gender %>
+                                        </td>
+                                        <td>
+                                            <%= student.location %>
+                                        </td>
+                                        <% if (student.photo=='avatar.jpg' ) { %>
+                                            <td><img class="student_image" src="/images/avatar.jpg" alt=""></td>
+                                            <% } else { %>
+                                                <td><img class="student_image"
+                                                        src="/images/student/<%= student.photo %> " alt=""></td>
+                                                <% } %>
+
+                                                    <td>
+                                                        <a href="/student/show/<%= student.id %> "
+                                                            class="btn btn-info btn-sm"><i
+                                                                class="fa-solid fa-eye"></i></a>
+                                                        <a href="/student/edit/<%= student.id %>"
+                                                            class="btn btn-warning btn-sm"><i
+                                                                class="fa-solid fa-pen-to-square"></i></a>
+                                                        <a href="/student/delete/<%= student.id %>"
+                                                            class="btn btn-danger btn-sm dltStudent"><i
+                                                                class="fa-solid fa-trash"></i></a>
+                                                    </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
